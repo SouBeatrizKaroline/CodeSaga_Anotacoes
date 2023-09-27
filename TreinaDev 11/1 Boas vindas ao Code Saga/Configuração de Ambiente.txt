@@ -1,0 +1,40 @@
+Configurações de ambiente
+Para solucionar os desafios do Code Saga você deverá utilizar o seu computador, configurado com uma linguagem de programação, um editor de código e o Git que você já conheceu na Saga de “Boas Vindas”. Quando você concluir um desafio terá escrito código de verdade!
+
+Para os desafios do programa TreinaDev você deverá escrever código em Ruby.
+
+Antes de começar a resolver os desafios, será necessário baixá-lo através do comando git clone. Quando você iniciar um desafio, ao final da descrição, você irá encontrar informações para isto, incluindo o endereço do repositório Git. Após baixar o desafio e entrar no diretório com o código a ser solucionado, você poderá executar o comando bin/setup para deixar o ambiente configurado e tudo funcionando direitinho. O comando bin/setup estará contido dentro de todos os desafios do Code Saga. Dessa forma você pode ter a garantia de que todas as dependências para execução do desafio estão resolvidas e você pode iniciar o código.
+
+Para cada desafio estas instruções estarão sempre disponíveis ao final da descrição do problema a ser resolvido. O bin/setup pode não funcionar em computadores que utilizam Windows. Mas não se preocupe, logo abaixo, haverá alternativas para que você consiga configurar e rodar os desafios.
+
+Editores de código
+Para resolver os desafios você vai precisar de um programa para começar a escrever código. Nós recomendamos que você utilize um editor de código e para isso temos duas opções gratuitas e bastante adotadas pela comunidade: o Atom (https://github.blog/2022-06-08-sunsetting-atom/) e o Visual Studio Code (https://code.visualstudio.com/). Se você já tem um ambiente configurado e está acostumado com outros editores ou IDEs, fique à vontade! O importante é resolver os desafios.
+
+Sistema Operacional
+O Sistema Operacional é a interface que possibilita a interação entre a pessoa e o computador. Ele é responsável por gerenciar toda troca de informações e comandos entre os componentes do seu computador, como memória, disco rígido, processador, teclado/mouse, etc. Recomendamos que você utilize sistemas operacionais Baseados em Unix, como distribuições de Linux (Ubuntu por exemplo).
+
+Em computadores que rodam Windows 10 ou Windows 11, recomendamos o uso do WSL (Subsistema do Windows para Linux) para se manter mais próximo de um ambiente Linux.
+
+Para obter mais informações de como instalar e configurar o WSL você pode ler mais neste tutorial de instalação (https://learn.microsoft.com/pt-br/windows/wsl/install).
+
+Ruby
+Ruby é a principal linguagem que usaremos aqui no Code Saga. Ela é dinâmica e open source, com foco em simplicidade e produtividade. Tem uma sintaxe elegante, fácil de ler e escrever. Por isso, acreditamos que é uma excelente linguagem para quem quer começar a programar ou se aperfeiçoar.
+
+Quem quer se aprimorar não terá dificuldade em levar esse conhecimento para outras linguagens, afinal, não à toa Ruby é conhecida como a linguagem amiga de quem quer programar. ;)
+
+Ruby foi pensado para desenvolvimento em sistemas baseados em Unix, por essa razão, recomendamos instalar sistemas operacionais como: Ubuntu, Fedora, Mint e outras distribuições Linux ou macOS.
+
+Se você usa Windows, recomendamos bastante que você faça dual boot na sua máquina para não ter problemas de performance. No Windows 10 também há a opção de instalar o Subsistema do Windows para Linux. Você pode ler mais neste tutorial de instalação (https://learn.microsoft.com/pt-BR/windows/wsl/install). As duas alternativas funcionam super bem.
+
+Outra opção, menos indicada, é fazer a instalação através de máquinas virtuais usando o Oracle Virtual Box (https://www.virtualbox.org/wiki/Downloads), assim é possível simular uma distribuição Linux (recomendamos Ubuntu) dentro do seu Sistema Operacional. Como as formas de instalação mudam frequentemente, você pode usar como guia a documentação oficial do sistema. Para iniciantes, recomendamos o Ubuntu e seu guia de instalação disponibilizado pela comunidade (https://help.ubuntu.com/community/Installation). Uma alternativa não muito performática é usar o Ruby Installer (https://rubyinstaller.org/) em ambientes Windows. Se não quiser usar outro Sistema Operacional, mas quiser evitar problemas, você pode instalar uma máquina virtual.
+
+Para instalar o Ruby em sistemas Unix como Ubuntu, você pode usar algo simples, como abrir o Terminal e digitar o comando apt-get install ruby, mas nossa recomendação é usar gerenciadores de versão para a instalação. Esses gerenciadores permitem instalar e alternar entre versões diferentes da linguagem no mesmo computador. Nós costumamos sugerir o RVM (https://rvm.io/).
+
+De qualquer forma, o mais importante é você ter o ambiente pronto e se sentir confortável com ele. No site oficial da linguagem (https://www.ruby-lang.org/en/downloads/) você encontra outras opções de instalação, além das duas que recomendamos acima.
+
+Após instalar o Ruby, execute um gem install bundler para baixar um dos gerenciadores de dependências do Ruby.
+
+Com o Ruby instalado, você vai precisar escrever código em um editor de texto. Diferente dos processadores de texto, como o Microsoft Word, os editores permitem que você veja realmente todo o conteúdo dos arquivos que está criando. Em programação, uma vírgula ou um espaço em branco na posição errada podem gerar erros nos programas, por isso é importante ter total controle e percepção do código escrito.
+
+Conclusão
+Quando concluir esses passos e estiver com o seu ambiente configurado, pode seguir para os próximos desafios. :)

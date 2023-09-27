@@ -1,0 +1,40 @@
+Calculadora
+Aguardando...
+Submeta sua solução através do Git para conquistar seus codepoints
+
+Para esquentar os motores, nesse desafio você vai implementar métodos que executam algumas operações matemáticas.
+
+Antes de começar, clone o repositório e configure-o rodando bin/setup no Terminal. Em seguida, execute o comando:
+
+rspec
+Na sua tela deve aparecer uma série de alertas de falhas. Cada um deles possui uma condição que precisa ser satisfeita. A sua tarefa será implementar os códigos necessários para que todos os testes passem sem falhas. Analise cada um dos erros e implemente o seu código no arquivo lib/calculadora.rb.
+
+Lembre-se que não é necessário utilizar puts para retornar um valor pois o teste se encarrega disso executando o retorno do método.
+
+Se você ainda não assistiu, recomendamos acessar as trilhas de conteúdos na App Campus Code, procurar os tutoriais do Code Saga e assistir o vídeo Como resolver o primeiro desafio com Ruby. :)
+
+Lá você também vai encontrar outras materiais importantes para seu aprendizado nessa jornada!
+
+AVISO
+
+Esse desafio é parte de um processo seletivo da Campus Code e fica proibido o compartilhamento, incluindo, mas não se restringindo a:
+
+versionadores de código (como GitHub, GitLab, BitBucket e similares)
+grupos públicos como Telegram, Facebook e Whatsapp, entre outros
+fóruns como StackOverflow e outros
+bem como com outros participantes.
+Ao compartilhar o desafio, mesmo que parcialmente, ou divulgar sua solução para outros participantes, a Campus Code pode excluir você deste e de outros processos seletivos.
+
+Instruções
+Em seu terminal, com Git configurado e uma chave SSH cadastrada no CodeSaga, siga os passos abaixo:
+
+Passo 1 - Clone o repositório
+git clone git@git.codesaga.com.br:BKCordeiroDaSilva/calculator
+
+Passo 2 - Mude para o novo diretório
+cd calculator
+
+Passo 3 - Execute o script para configurar seu projeto
+bin/setup
+
+<------------------------------------------------------------------------------------------->

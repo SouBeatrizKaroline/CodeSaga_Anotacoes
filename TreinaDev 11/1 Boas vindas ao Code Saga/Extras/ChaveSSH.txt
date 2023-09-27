@@ -1,0 +1,16 @@
+ssh-keygen
+
+Gera uma chave SSH
+
+
+<------------------------------------------------------------------------------------------->
+
+cat ~/.ssh/id_rsa.pub
+
+Reformula a chave gerada para que você possa copia-la e utiliza-la
+
+<------------------------------------------------------------------------------------------->
+
+ ssh-keygen
+ Gerar chave no Linux
+
