@@ -1,0 +1,20 @@
+Ferramentas de controle de versão:
+
+Git
+Subversion
+Mercurial
+Merant PVCS
+Visual Source Safe
+
+Para instalar o git no Ubuntu:
+$ apt-get install git
+
+Para saber a versão do git:
+git --version
+
+Se quiser ver todas as configurações definidas na sua máquina, use o comando:
+
+$ git config --list
+ou
+
+$ git config --global --list 

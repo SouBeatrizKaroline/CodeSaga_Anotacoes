@@ -1,0 +1,366 @@
+Conhecendo o Code Saga
+Nossas boas-vindas!
+
+O Code Saga é pensado como uma plataforma tanto para quem quer aprender a programar quanto para quem já programa e quer aprimorar suas habilidades e conhecer novas tecnologias.
+
+Nessas primeiras jornadas, vamos começar configurando nosso ambiente de trabalho. Vamos instalar os programas necessários e criar sua conta aqui no site para iniciar os desafios de programação.
+
+Gostaríamos de agradecer por estar aqui conosco. Quando estiver tudo ok para prosseguir, clique no botão Finalizar desafio para conquistar seus primeiros codepoints – nossa moeda por aqui – e siga para o próximo desafio.
+
+Bons estudos!
+
+<------------------------------------------------------>
+
+Adicionando sua chave de segurança
+Para resolver desafios aqui no Code Saga, vamos usar uma forma super comum de compartilhar código hoje em dia: o Git. Ele é um sistema de controle de versão de arquivos, gratuito e open source, criado por Linus Torvalds (que também criou o Linux).
+
+Vamos começar instalando o Git:
+
+Instalando o Git nos principais sistemas operacionais
+Ubuntu (e outros sistemas Linux Based)
+Abra o aplicativo Terminal e rode o comando sudo apt-get install git
+
+Windows
+Instale o executável pelo site: https://git-scm.com/download/win
+
+Mac Os
+Abra o aplicativo Terminal e rode o comando xcode-select --install
+
+Não se preocupe, falaremos mais sobre Git em outras jornadas. Por enquanto, vamos nos preocupar em configurar nossa estação de trabalho!
+
+Configurando a máquina
+Após instalar o Git na sua máquina, chegou a hora de se identificar, isto é, dizer ao Git quem você é. Para isso:
+
+$ git config --global user.name "Seu nome"
+$ git config --global user.email "Seu e-mail"
+Colocando essa opção --global estamos dizendo que para todos os repositórios Git nessa máquina valerá essa opção, a menos que ela seja redefinida.
+
+Agora, precisamos gerar uma chave de acesso. Com ela, você cria uma forma segura de se comunicar com o Code Saga, assim não precisa se preocupar em colocar senha quando for enviar algum desafio. A plataforma já reconhece sua máquina e sabe que pode receber arquivos dela.
+
+Para gerar essa chave, temos que executar um comando no Terminal (se você estiver usando Ubuntu ou Mac Os) ou no Git Bash do Windows (ele foi instalado junto com o Git).
+
+Abra o aplicativo correspondente ao seu sistema, execute o comando ssh-keygen e siga os passos:
+
+Para o caminho da chave, dê somente Enter, deixando o caminho padrão.
+
+Para a senha, deixe em branco ou digite uma senha caso queira mais segurança.
+
+Repita a senha ou, se quiser em branco, aperte Enter.
+
+Esta sequência gerará um resultado similar às linhas abaixo:
+
+ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/seu_user/.ssh/id_rsa): # dê ENTER
+Enter passphrase (empty for no passphrase): # Sua senha, pode deixar em branco
+Enter same passphrase again: # Repita a senha ou Enter para branco
+Your identification has been saved in /Users/seu_user/.ssh/id_rsa.
+Your public key has been saved in /Users/seu_user/.ssh/id_rsa.pub.
+The key fingerprint is:
+4a:a5:34:59:d5:a5:56:29:d3:5e:6e:12:e8:7b:74:da seu_user@sua_maquina
+The key's randomart image is:
++--[ RSA 2048]----+
+| o+o+o+o.o |
+| .....=o o o|
+| oo . o |
+| . . o . .|
+| . S o + |
+| . . . o E|
+| . . |
+| |
+| |
++-----------------+
+Sua chave no Code Saga
+Sua chave está criada. Ela vai permitir a comunicação segura entre sua máquina e o Code Saga. Agora precisamos adicioná-la aqui na plataforma.
+
+Para copiar sua chave, utilize o comando:
+
+cat ~/.ssh/id_rsa.pub
+E copie a Chave SSH que será impressa na tela.
+
+Colando sua chave
+Para adicionar a chave na sua conta, clique aqui e, em seguida, no botão Nova Chave.
+
+Cole sua chave no campo Chave SSH.
+
+Escolha um Label para sua chave como casa, se este for seu computador de casa.
+
+É só clicar no botão Nova Chave. Você pode cadastrar mais de uma chave se quiser.
+
+Se não recebeu nenhuma mensagem de erro, parabéns, você adicionou sua chave no Code Saga! Aguarde até 5 minutos para continuar nas novas jornadas!
+
+Se teve algum problema, você pode pedir ajuda no botão Pedir Ajuda, aqui embaixo.
+
+Caso queira, você pode ler mais sobre Git nas apostilas disponibilizadas para o programa.
+
+Bons estudos!
+
+<------------------------------------------------------>
+
+Git Básico
+Se você já teve alguma experiência com programação, com certeza já criou alguma pasta _old, _backup ou algo parecido. Provavelmente você queria fazer uma alteração e estava "guardando" a versão anterior do seu código por precaução.
+
+Não é assim que trabalham as melhores pessoas desenvolvedoras de software. Normalmente se usa alguma ferramenta de controle de versão para alterar o código e criar novas versões, sem a necessidade de fazer cópias manuais.
+
+Existem várias ferramentas de controle de versão, tais como:
+
+Git
+Subversion
+Mercurial
+Merant PVCS
+Visual Source Safe
+Todas têm suas vantagens e desvantagens e não vamos discutir sobre elas. Aqui, vamos falar especialmente do Git, o controle de versão usado para controlar a versão do código do Kernel do Linux e criado por Linus Torvalds, criador do Linux. O Git também é usado pelo Github. Mas chega de enrolação, vamos ao que interessa!
+
+Instalação
+Você já deve ter instalado o Git no desafio anterior – Adicionando sua chave de segurança. Se já instalou, pule para o tópico Taxonomia de um comando Git (aqui embaixo). Se ainda não instalou, isso pode ser feito com o comando abaixo caso esteja usando Ubuntu (ou outra distribuição de Linux que use apt-get como gerenciador de pacotes):
+
+$ apt-get install git
+Para instalação no Mac e no Windows, você pode conferir este link:
+
+Primeiros passos instalando Git
+É importante manter o Git atualizado e você pode conferir a versão instalada no seu computador usando o comando git --version no Terminal.
+
+Taxonomia de um comando Git
+Sempre que falarmos de um comando, a estrutura será a seguinte:
+
+git
+nome do comando git que queremos executar, exemplo: git config;
+opções, exemplo: git config --global;
+argumentos, exemplo: git config user.email, para mostrar o e-mail definido.
+Se quiser ver todas as configurações definidas na sua máquina, use o comando:
+
+$ git config --list
+ou
+
+$ git config --global --list 
+Obtendo Ajuda
+Com o Git também é muito fácil obter ajuda:
+
+$ git help # mostra help geral
+$ git help config # mostra help específico para o comando citado
+Se precisar de ajuda para um comando específico, basta dar git help <comando>.
+
+Iniciando um repositório
+Na sua pasta HOME, em ~/workspace, crie um diretório, meu_projeto.
+
+$ cd ~/workspace
+$ mkdir meu_projeto
+Neste diretório, vamos dar o comando git init, para dizer ao Git que queremos que ele comece a "olhar" para os arquivos nessa pasta:
+
+$ cd meu_projeto
+$ git init
+$ ls -a
+. .. .git
+Como pode ver, o Git criou um arquivo .git. Esse diretório tem tudo que o Git precisa para trabalhar e indica que esse diretório está sendo controlado pelo Git.
+
+Dependendo da versão do Git que você estiver usando é possível que apareça a seguinte mensagem depois de rodar o comando git init:
+
+$ git init                                                                                                                                                                                                        
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+No momento em que o comando de inicialização acima é rodado em um diretório, o Git por padrão precisa dar um nome para a ramificação principal em que o histórico de versões será armazenado. Originalmente o nome dado a essa ramificação era master. Atualmente, considerando o significado histórico do termo atrelado a escravidão, a comunidade tem dado preferência para a outros termos, como main, por exemplo. A mensagem mostra como podemos renomear a ramificação e como configurar o nome padrão, para que seja sempre utilizado esse nome ao inicializar o Git em um diretório. Você pode conferir o nome atual rodando o comando:
+
+$ git branch --show-current
+master
+Vamos seguir a recomendação adotada pela comunidade e trocar o nome para main rodando o comando:
+
+$ git branch -m main
+$ git branch --show-current
+main
+Se o nome padrão já estiver configurado como main no seu computador, não é necessário fazer essa alteração. No momento, o que você precisa saber é que a ramificação principal será chamada de main e é lá que será armazenado o histórico de modificações de código do diretório em que estamos trabalhando.
+
+Adicionando e comitando
+Vejamos como o Git controla a versão dos arquivos do seu projeto! Primeiro, vamos criar um arquivo README.md e ver o que o Git nos diz com o comando git status:
+
+$ touch README.md
+$ git status
+On branch main
+
+Initial commit
+
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present
+Ele avisa que há arquivos não controlados (untracked), em outras palavras, arquivos que o Git ainda não faz controle. Vamos adicionar a área de seleção do Git:
+
+$ git add README.md
+$ git status
+
+On branch main
+
+Initial commit
+
+Changes to be committed:
+        new file:   README.md
+Agora ele nos diz que há mudanças a serem comitadas (gravadas), sendo assim vamos comitar!
+
+$ git commit -m "Meu primeiro commit"
+$ git status
+On branch main
+nothing to commit, working directory clean
+Pronto, fizemos nosso primeiro commit no Git! O comando git commit grava nossas modificações e a opção -m permite que o Git receba uma mensagem descritiva para nosso commit. Sem mensagem, o Git reclama!
+
+Visualizando commits
+Para ver o commit, podemos usar o comando git log:
+
+$ git log
+commit 405ef53eec6995d6be608d5b419774eed321adcf
+Author: Seu nome <email@gmail.com>
+Date:   Mon Apr  4 17:58:17 2015 -0300
+
+    Meu primeiro commit
+Digite q para sair do log.
+
+Mais sobre adicionar e comitar
+Muito simples até agora, né? Vamos mostrar o poder do controle de versão!
+
+Abra o arquivo README.md e faça algumas alterações.
+
+$ code README.md
+Esse comando só funciona se você tem o VS Code instalado, mas você pode usar qualquer editor de código ou texto. E se esse comando não funcionar, você pode abrir o editor normalmente como faria com qualquer programa de computador.
+
+Altere o arquivo e salve, volte ao terminal e dê o comando:
+
+$ git status
+On branch main
+Changes not staged for commit:
+        modified:   README.md
+
+no changes added to commit
+Veja que interessante: o Git diz que há mudanças que ainda não foram selecionadas para commit, sendo assim vamos adicioná-las.
+
+$ git add README.md
+$ git status
+On branch main
+Changes to be committed:
+        modified:   README.md
+E agora está no "jeito" para commit.
+
+$ git commit -m "Altera o README.md"
+Se você esquecer o -m, o Git vai abrir o editor definido em git config core.editor, no meu caso o vim. Vamos alterar para o nano:
+
+$ git config core.editor
+core.editor=vim
+$ git config core.editor "nano"
+Altere mais uma vez o arquivo README.md e grave com o comando:
+
+$ git add README.md
+$ git commit
+Isso vai abrir o editor nano. Escreva sua mensagem no commit e salve com Ctrl+X e depois Y para confirmar.
+
+Faça o desafio:
+
+Leia o Git Essencial - Gravando Alterações no Repositório (https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Gravando-Altera%C3%A7%C3%B5es-em-Seu-Reposit%C3%B3rio)
+Com base na documentação acima, crie um arquivo .gitignore e defina que o arquivo me_ignore.txt seja ignorado;
+Dê o comando git status;
+Crie o arquivo me_ignore.txt e novamente git status;
+Veja se o arquivo me_ignore.txt não aparece;
+Finalize o desafio quando estiver tudo pronto!
+
+<------------------------------------------------------>
+
+Git, aqui ou ali, seu aliado!
+Aguardando...
+Submeta sua solução através do Git para conquistar seus codepoints
+
+Neste desafio você verá como clonar um repositório Git criado pela nossa equipe e depois enviar as alterações de volta para o servidor.
+
+Já entendemos o básico, agora é hora de entender como compartilhar nosso código, como mantê-lo em um servidor e/ou serviço como o Github, BitBucket.
+
+Clone
+Primeiro vamos clonar um repositório, ou seja, obter uma cópia de um projeto hospedado em um servidor Git. Ao iniciar esse desafio, nós já criamos um repositório no servidor e agora você deve fazer essa cópia para seu computador. O comando git clone é o responsável por isso.
+
+Você pode ver o caminho correto nas instruções do desafio abaixo
+
+Vá no fim deste desafio, no Passo 1 - Clone o repositório, copie e cole o comando git clone que foi gerado e execute no seu terminal.
+
+Quando você roda esse comando, deve aparecer na sua tela uma série de mensagens semelhantes a essas abaixo:
+
+Cloning into 'exemplo_git'...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+Checking connectivity... done.
+Esse comando faz muita coisa, vamos entender passo a passo:
+
+Primeiro ele cria um diretório exemplo_git. Então podemos rodar:
+
+$ cd exemplo_git
+Além disso, ele já traz um repositório Git inicializado e com o conteúdo salvo no servidor, vamos ver:
+
+$ ls -a
+. .. .git/ README.md
+Temos o diretório .git e o arquivo README.md e agora podemos ver o histórico de commits desse repositório com:
+
+$ git log
+commit a1e153f4d7096a048644935995c6ec6fb08ede88
+Author: Campus Code<treinamentos@campuscode.com.br>
+Date:   Tue Apr 21 15:03:45 2015 -0300
+
+    Initial Commit
+Com o git clone o Git cria um diretório com o nome do projeto, traz todo o conteúdo do projeto e ainda todo o histórico, excelente!
+
+Remote
+Agora vamos ver algumas informações sobre o nosso repositório remoto, com o comando git remote:
+
+$ git remote -v
+origin  git@git.codesaga.com.br:SEU_LOGIN/exemplo_git (fetch)
+origin  git@git.codesaga.com.br:SEU_LOGIN/exemplo_git (push)
+Ele nos mostra que temos um repositório remoto, que o nome dele é origin e que podemos fazer push e fetch nele.
+
+Vamos ver como funciona o push.
+
+Push
+Após fazer alterações no seu repositório e criar o commit (“comitar”, como costumamos falar), podemos enviar para o servidor com o comando git push. Vamos ver esse processo passo a passo. Primeiro vamos adicionar um arquivo e comitá-lo:
+
+$ touch mais_um_arquivo.txt
+$ git add mais_um_arquivo.txt
+$ git commit -m "mais um arquivo adicionado"
+Com o comando git status verificamos o diretório:
+
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+nothing to commit, working directory clean
+O comando nos avisa que estamos um commit na frente do repositório, sendo assim, vamos sincronizar:
+
+$ git push origin main
+Uma mensagem semelhante a essa abaixo deve aparecer:
+
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 302 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To git@git.codesaga.com.br:exemplo_git
+   c27e355..4e86ea6  main -> main
+Feito isso, o Git enviou nossas alterações para o servidor remoto, os parâmetros origin e main são os mesmos usados no git pull, origin para o nome do remoto e main para o nome da branch.
+
+Você já é mais que capaz de fazer o Challenge Git Básico, então, divirta-se! Para saber mais sobre repositórios remotos, acesse: Git-Working with Remotes.
+(https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+
+Até mais!
+
+Instruções
+Em seu terminal, com Git configurado e uma chave SSH cadastrada no CodeSaga, siga os passos abaixo:
+
+Passo 1 - Clone o repositório
+git clone git@git.codesaga.com.br:BKCordeiroDaSilva/git-example
+
+Passo 2 - Mude para o novo diretório
+cd git-example
+
+Passo 3 - Execute o script para configurar seu projeto
+bin/setup
+
+<------------------------------------------------------>
